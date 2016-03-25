@@ -17,9 +17,9 @@ A primeira coisa que se destaca é a complexidade do algorítimo exigido para a 
 
 A princípio imaginei que a dificuldade a ser superada seria a obtenção de um algorítimo superior, porém o fundamento deste cálculo é com base numa fórmula clássica denominada Djikstra, utilizado inclusive pelo Google Maps. Então a minha primeira tentativa foi utilizar a API do Google Maps para passar pontos reais no mapa e utilizar o algorítimo interno da própria API para receber a melhor rota.
 
-Porém ao estudar mais o fundo o problema percebi que existiam diversas regras de negócio escondidas por trás de um formato simples que eu nunca havia tido contato antes, o formato de malha logística. Ao reler o enunciado do desafio dezenas de vezes percebi que este formato é provavelmente gerado por outro programa, que exporta esta lista formatada como no enunciado.
+Porém ao estudar mais o fundo o problema percebi que existiam diversas regras de negócio escondidas por trás de um formato simples que eu nunca havia tido contato antes, o formato de malha logística. Ao reler o enunciado do desafio outras de vezes percebi que este formato é de malha pode ter sido gerado por outro programa, que exporta esta lista formatada.
 
-Então reinicie meus esfoços desta vez mais concentrado em seguir a risca o solicitado, encontrei uma bibliota PHP de DJIKSTRA para fazer o cálculo e trabalhei para converter o formato de malha logística puro para um array associativo para o algorítimo interno do sistema.
+Então reinicie meus esfoços , encontrei uma bibliota PHP de DJIKSTRA para fazer o cálculo e trabalhei para converter o formato de malha logística puro para um array associativo para o algorítimo interno do sistema.
 
 Essa conversão porém não é 100% eficiente, pois para cada valor da linha de malha são feitas 2 entradas no array, talvez exista uma forma de otimizar isso com mais tempo. Sou um profissional do tipo criativo, este tipo é o tipo de desafio que também desafia meu impulso de ser criativo, exigindo concentração para resolver o problema como ele se apresenta.
 
