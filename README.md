@@ -27,7 +27,7 @@ O sistema tem um webservice para passar os dados e retorna os valores, que podem
 
 .: entregando mercadorias
 
-O Walmart esta desenvolvendo um novo sistema de logistica e sua 
+O XXXXXXXX esta desenvolvendo um novo sistema de logistica e sua 
 
 ajuda é muito importante neste momento. Sua tarefa será desenvolver 
 

@@ -78,10 +78,17 @@ class Dijkstra
         }
     }
 }
+//var_dump($_POST);
+//var_dump($_FILES);
+//var_dump($fp = fopen($_FILES["arquivo_malha"]['tmp_name'], "r"));
+//die;
+//error_reporting(E_ALL);die; 
 
-
-
+  
+//var_dump($fp = fopen($_FILES['uploaded_file']['tmp_name'], 'r'));
+//var_dump($fp = fopen($_POST("arquivo_malha"), 'rb'));
 if(!empty($_POST)) {
+    
     /*$graph = array(
       'A' => array('B' => 3, 'D' => 3, 'F' => 6),
       'B' => array('A' => 3, 'D' => 1, 'E' => 3),
@@ -90,15 +97,15 @@ if(!empty($_POST)) {
       'E' => array('B' => 3, 'C' => 2, 'D' => 1, 'F' => 5),
       'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
     );*/
-
-$malha = "
+    
+/*$malha = "
 I
 A B 10
 B D 15
 A C 20
 C D 30
 B E 50
-D E 30";
+D E 30";*/
 
     /*$malha = "
     I
@@ -107,13 +114,21 @@ D E 30";
     A C 20";
     */
 
-    $separator = "\r\n";
-    $line = strtok($malha, $separator);
+#AQUI 
+    //$separator = "\r\n";
+    //$line = strtok($malha, $separator);
     //$graph = array('A' => array('D' => 3, 'F' => 6));
     $graph = array();
-    while ($line !== false) {
+    
+    //while ($line !== false) {
+
+    $fp = fopen($_FILES["arquivo_malha"]["tmp_name"], "rw");
+    //var_dump($fp);
+    while ( ($line = fgets($fp)) !== false) {
+        //echo " ============== ";
+        //var_dump($ponto1 = substr($line,0,1));die; 
         # do something with $line
-        echo " l:".$line = strtok( $separator );
+        echo " l:".$line;// = strtok( $separator );
         //echo $line;
         echo " p1:".$ponto1 = substr($line,0,1);
         echo " p2:".$ponto2 = substr($line,2,1);
@@ -155,18 +170,44 @@ D E 30";
         }
         //echo "<br />";
     }
-    //print_r($graph );
-
+    echo "<hr />1";
+    print_r($graph );
+    
+    $mapa2 = array(
+      'A' => array('B' => 10, 'C' => 9, 'D' => 10, 'E' => 12),
+      'B' => array('A' => 10, 'C' => 7),
+      'C' => array('A' => 9, 'B' => 7, 'D' => 8),
+      'D' => array('A' => 10, 'C' => 8, 'E' => 9, 'F' => 8),
+      'E' => array('A' => 12, 'D' => 9, 'F' => 7),
+      'F' => array('D' => 8, 'E' => 7),
+    );
+    $mapa3 = array(
+      'A' => array('B' => 3, 'D' => 3, 'F' => 6),
+      'B' => array('A' => 3, 'D' => 1, 'E' => 3),
+      'C' => array('E' => 2, 'F' => 3),
+      'D' => array('A' => 3, 'B' => 1, 'E' => 1, 'F' => 2),
+      'E' => array('B' => 3, 'C' => 2, 'D' => 1, 'F' => 5),
+      'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
+    );
+    echo "<hr />2";
+    print_r($mapa2);
+    //$graph=$mapa3;
+    echo "<hr />3";
+    //$result = array_diff($graph, $mapa2);
+    //print_r($result);
+    
     $g = new Dijkstra($graph);
-    $a = $g->shortestPath($_POST["origem"], $_POST["destino"]);  // 3:D->E->C
+    $a = $g->shortestPath($_POST["origem"], $_POST["destino"]);  //
     $dist = $a[0];
     $rota = $a[1];
+    var_dump( $a );
+    //die;
     //
     $autonomia = $_POST["autonomia"];
     $valor_gas = $_POST["valor_gas"];
-    //$custo_km = $valor_gas*$autonomia;
+    $custo_km = ($autonomia/$valor_gas);
     //
-    $custo = $dist/($autonomia/$valor_gas);
+    $custo = $dist/$custo_km;
     header( "HTTP/1.1 303 See Other" );
     header( "Location: index.php?distancia=$dist&rota=$rota&custo=$custo" );
 } else {

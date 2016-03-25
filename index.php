@@ -23,30 +23,30 @@ if(!empty($_GET)) {
 }
 ?>
 
-<form action="rota.php" method="POST">
+<form action="rota.php" method="POST" enctype="multipart/form-data">
     <p>
         <label for="autonomia">Autonomia (km/l):</label><br />
         <input type="text" name="autonomia" value="10" />
     </p>
     <p>
         <label for="valor_gas">Valor Combustível:</label><br />
-        <input type="text" name="valor_gas" value="2,5" />
+        <input type="text" name="valor_gas" value="2.5" />
     </p>
     <p>
         <label for="origem">Origem:</label><br />
-        <input type="text" name="origem" value="A" />
+        <input type="text" name="origem" value="F" />
     </p>
     <p>
         <label for="destino">Destino:</label><br />
-        <input type="text" name="destino" value="D" />
+        <input type="text" name="destino" value="B" />
     </p>
     <p>
-        <input type="radio" name="numero_mapa">Malha pré-configurada
-        <input type="radio" name="numero_mapa">CUSTOM
+        <label for="arquivo_malha">Arquivo malha (.txt):</label><br />
+        <input type="file" name="arquivo_malha">
     </p>
     <button type="submit">Enviar</button>
 </form>
-<h2>MALHAS</h2>
+<!--h2>MALHAS</h2>
 <form>
 <textarea>
     I
@@ -58,11 +58,11 @@ B E 50
 D E 30
 </textarea>
     
-</form>
+</form-->
 
 
 <?php
-
+/*
 $malha = "
 I
 A B 10
@@ -77,7 +77,7 @@ I
 A B 10
 B D 15
 A C 20";
-*/
+/
 $separator = "\r\n";
 $line = strtok($malha, $separator);
 //$graph = array('A' => array('D' => 3, 'F' => 6));
