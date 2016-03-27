@@ -18,12 +18,15 @@ if(!empty($_GET)) {
     if(isset($_GET["erro"])) {
         echo "<p> ERRO : ".$_GET["erro"]."</p>";
     } else {
-        var_dump($_GET);
+        echo "<h4>Algorítimo 1</h4>";
+        echo "Distancia: ".$_GET["distancia"]."<br />Rota: ".$_GET["rota"]."<br />Custo: ".$_GET["custo"];
+        echo "<h4>Algorítimo 2</h4>";
+        echo "Distancia: ".$_GET["distancia2"]."<br />Rota: ".$_GET["rota2"]."<br />Custo: ".$_GET["custo2"];
     }
 }
 ?>
 
-<form action="rota-2.php" method="POST" enctype="multipart/form-data">
+<form action="rota-3.php" method="POST" enctype="multipart/form-data">
     <p>
         <label for="autonomia">Autonomia (km/l):</label><br />
         <input type="text" name="autonomia" value="10" />

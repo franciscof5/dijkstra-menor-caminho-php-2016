@@ -121,10 +121,10 @@ if(!empty($_POST)) {
     var_dump($graph);
     echo "<hr />";
     var_dump($graph_array);
-     echo "<hr />";
+    echo "<hr />";
 	//, 
 	//
-	$path = dijkstra($graph_array, $_POST["origem"], $_POST["destino"]);
+	$path = dijkstra($graph, $_POST["origem"], $_POST["destino"]);
 	//$path = dijkstra($graph_array, "A", "D");
 	echo "path is: ".implode(", ", $path)."\n";
 	//die;
