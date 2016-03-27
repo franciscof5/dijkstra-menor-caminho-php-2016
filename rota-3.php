@@ -291,7 +291,7 @@ D E 30";*/
     var_dump($path = dijkstra($graph2, $_POST["origem"], $_POST["destino"]));
     var_dump($graph2);
 
-    echo $rota2 = implode(", ", $path);
+    echo $rota2 = implode(" ", $path);
     //die;
     $dista2 = $dist_[$_POST["destino"]];
     //
