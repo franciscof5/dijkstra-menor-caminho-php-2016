@@ -23,7 +23,7 @@ if(!empty($_GET)) {
 }
 ?>
 
-<form action="rota.php" method="POST" enctype="multipart/form-data">
+<form action="rota-2.php" method="POST" enctype="multipart/form-data">
     <p>
         <label for="autonomia">Autonomia (km/l):</label><br />
         <input type="text" name="autonomia" value="10" />
@@ -34,11 +34,11 @@ if(!empty($_GET)) {
     </p>
     <p>
         <label for="origem">Origem:</label><br />
-        <input type="text" name="origem" value="F" />
+        <input type="text" name="origem" value="a" />
     </p>
     <p>
         <label for="destino">Destino:</label><br />
-        <input type="text" name="destino" value="B" />
+        <input type="text" name="destino" value="c" />
     </p>
     <p>
         <label for="arquivo_malha">Arquivo malha (.txt):</label><br />

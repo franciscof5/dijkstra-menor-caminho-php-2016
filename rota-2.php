@@ -1,5 +1,7 @@
 <?php
+GLOBAL $dist;
 function dijkstra($graph_array, $source, $target) {
+	GLOBAL $dist;
     $vertices = array();
     $neighbours = array();
     foreach ($graph_array as $edge) {
@@ -52,6 +54,9 @@ function dijkstra($graph_array, $source, $target) {
     return $path;
 }
  
+
+
+
 $graph_array = array(
                     array("a", "b", 7),
                     array("a", "c", 9),
@@ -66,7 +71,6 @@ $graph_array = array(
 
 $graph_array = array(
                     array("a", "b", 7),
-                   
                     array("a", "d", 6),
                     array("b", "c", 9),
                     array("d", "e", 8),
@@ -75,7 +79,28 @@ $graph_array = array(
                     array("f", "g", 8)
                );
 
-$path = dijkstra($graph_array, "g", "c");
- 
-echo "path is: ".implode(", ", $path)."\n";
- 
+
+//var_dump($_POST);die;
+if(!empty($_POST)) {
+	//, 
+	//
+	$path = dijkstra($graph_array, $_POST["origem"], $_POST["destino"]);
+	echo "path is: ".implode(", ", $path)."\n";
+	//die;
+	$rota = implode(", ", $path);
+	//
+	var_dump($dist[$_POST["destino"]]);
+	//die;
+	$dista = $dist[$_POST["destino"]];
+	
+	$autonomia = $_POST["autonomia"];
+	$valor_gas = $_POST["valor_gas"];
+	$custo_km = ($autonomia/$valor_gas);
+	//
+	$custo = $dista/$custo_km;
+	header( "HTTP/1.1 303 See Other" );
+	header( "Location: index.php?distancia=$dista&rota=$rota&custo=$custo" );
+} else {
+    header( "HTTP/1.1 303 See Other" );
+    header( "Location: index.php?erro=Nada recebido" );
+}
