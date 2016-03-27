@@ -34,11 +34,11 @@ if(!empty($_GET)) {
     </p>
     <p>
         <label for="origem">Origem:</label><br />
-        <input type="text" name="origem" value="a" />
+        <input type="text" name="origem" value="A" />
     </p>
     <p>
         <label for="destino">Destino:</label><br />
-        <input type="text" name="destino" value="c" />
+        <input type="text" name="destino" value="D" />
     </p>
     <p>
         <label for="arquivo_malha">Arquivo malha (.txt):</label><br />

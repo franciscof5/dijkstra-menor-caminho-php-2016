@@ -170,7 +170,7 @@ D E 30";*/
         }
         //echo "<br />";
     }
-    echo "<hr />1";
+    echo "<hr />";
     print_r($graph );
     
     $mapa2 = array(
