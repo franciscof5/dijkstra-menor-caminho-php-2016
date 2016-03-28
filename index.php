@@ -49,95 +49,14 @@ if(!empty($_GET)) {
     </p>
     <button type="submit">Enviar</button>
 </form>
-<!--h2>MALHAS</h2>
-<form>
-<textarea>
-    I
-A B 10
-B D 15
-A C 20
-C D 30
-B E 50
-D E 30
-</textarea>
-    
-</form-->
-
+<h2>Exemplo de mapas</h2>
+<p>Os arquivos de mapa de malha abaixo são exemplos para testar o sistema, faça o download em seu computador [opção: salvar arquivo como] para enviar o arquivo no formulário acima. O sistema aceita comunicação direta entre máquinas, o formulário acima é feito para testes de cálculos dos algorítimos.</p>
+<ul>
+    <li><a href="mapas/mapa1.txt">mapa1.txt</a> - 5 nós</li>
+    <li><a href="mapas/mapa2.txt">mapa2.txt</a> - 6 nós</li>
+    <li><a href="mapas/mapa3.txt">mapa3.txt</a> - 7 nós</li>
+    <li><a href="mapas/mapa4.txt">mapa4.txt</a> - 8 nós</li>
+    <li><a href="mapas/mapa5.txt">mapa5.txt</a> - 11 nós</li>
+</ul>
 
 <?php
-/*
-$malha = "
-I
-A B 10
-B D 15
-A C 20
-C D 30
-B E 50
-D E 30";
-
-/*$malha = "
-I
-A B 10
-B D 15
-A C 20";
-/
-$separator = "\r\n";
-$line = strtok($malha, $separator);
-//$graph = array('A' => array('D' => 3, 'F' => 6));
-$graph = array();
-while ($line !== false) {
-    # do something with $line
-    echo " l:".$line = strtok( $separator );
-    echo " p1:".$ponto1 = substr($line,0,1);
-    echo " p2:".$ponto2 = substr($line,2,1);
-    echo " d:".$dist = substr($line,4);
-    if(array_key_exists($ponto1, $graph)) {
-        echo "existe nivel 1";
-        //$graph [$ponto1][] = array($ponto2 => $dist);
-        if(array_key_exists($ponto2, $graph[$ponto1])) {
-            echo "existe nivel 2";
-            $graph[$ponto1][] = array($ponto2 => $dist);
-        } else {
-            echo "nao existe nivel 2";
-            $graph[$ponto1][$ponto2] = $dist;
-            //$graph [$ponto1] = array($ponto2 => array($ponto1 => $dist));
-            //array_push($graph[$ponto1], )
-        }
-    } else {
-        echo "nao existe nivel 1";
-        $graph["$ponto1"] = array($ponto2 => $dist);
-        //array_push($grap, "B");
-    }
-    //
-    if(array_key_exists($ponto2, $graph)) {
-        echo "existe nivel 1";
-        //$graph [$ponto1][] = array($ponto2 => $dist);
-        if(array_key_exists($ponto1, $graph[$ponto2])) {
-            echo "existe nivel 2";
-            $graph[$ponto2][] = array($ponto1 => $dist);
-        } else {
-            echo "nao existe nivel 2";
-            $graph[$ponto2][$ponto1] = $dist;
-            //$graph [$ponto1] = array($ponto2 => array($ponto1 => $dist));
-            //array_push($graph[$ponto1], )
-        }
-    } else {
-        echo "nao existe nivel 1";
-        $graph["$ponto2"] = array($ponto1 => $dist);
-        //array_push($grap, "B");
-    }
-    echo "<br />";
-}
-print_r($graph );
-?>
-</body>
-</html>
-
-<?php
-/*
-A B 10
-B D 15
-A C 20
-C D 30
-B E 50
-D E 30
