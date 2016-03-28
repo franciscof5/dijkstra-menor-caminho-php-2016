@@ -9,6 +9,8 @@ Site: http://franciscomat.com
 
 Live-demo: http://franciscomat.com/melhor-caminho/
 
+INSTALAÇÃO
+Basta clonar o repositório em um servidor PHP, dentro da pasta /mapas existem 4 arquivos de exemplo para serem utilizados
 
 RELATÓRIO TÉCNICO
 Além do requirido no corpo da mensagem abaixo foi explicitado que era necessário uma solução PHP puro, no início realmente estranhei porque a vaga era para WordPress e o desafio parecia a princípio mais relacionado a ciência da programação do que a prática de programação wordpress.
