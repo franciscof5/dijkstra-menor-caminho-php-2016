@@ -10,3 +10,5 @@ H I 7
 H J 8
 I K 10
 K L 9
+L M 10
+M N 7

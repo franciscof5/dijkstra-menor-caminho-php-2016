@@ -239,7 +239,7 @@ D E 30";*/
     echo "<hr />";
     print_r($graph );
     
-    $mapa2 = array(
+    /*$mapa2 = array(
       'A' => array('B' => 10, 'C' => 9, 'D' => 10, 'E' => 12),
       'B' => array('A' => 10, 'C' => 7),
       'C' => array('A' => 9, 'B' => 7, 'D' => 8),
@@ -254,7 +254,7 @@ D E 30";*/
       'D' => array('A' => 3, 'B' => 1, 'E' => 1, 'F' => 2),
       'E' => array('B' => 3, 'C' => 2, 'D' => 1, 'F' => 5),
       'F' => array('A' => 6, 'C' => 3, 'D' => 2, 'E' => 5),
-    );
+    );*/
     echo "<hr />2";
     print_r($mapa2);
     //$graph=$mapa3;
@@ -297,8 +297,8 @@ D E 30";*/
     //
     $custo2 = $dista2/$custo_km;
 
-    header( "HTTP/1.1 303 See Other" );
-    header( "Location: index.php?distancia=$dist&rota=$rota&custo=$custo&distancia2=$dist2&rota2=$rota2&custo2=$custo2" );
+    //header( "HTTP/1.1 303 See Other" );
+    header( "Location: index.php?distancia=$dist&rota=$rota&custo=$custo&distancia2=$dista2&rota2=$rota2&custo2=$custo2" );
 } else {
     header( "HTTP/1.1 303 See Other" );
     header( "Location: index.php?erro=Nada recebido" );
