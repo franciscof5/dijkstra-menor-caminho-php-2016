@@ -8,24 +8,37 @@
     <title>Calculadora de Menor Caminho</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
-<body>
-
+<body style="width: 750px;background-color: #EEE">
+<center>
 <h1>Calculadora de Menor Caminho</h1>
-
+</center>
 <?php
 
 if(!empty($_GET)) {
     if(isset($_GET["erro"])) {
         echo "<p> ERRO : ".$_GET["erro"]."</p>";
-    } else {
+    } else { ?>
+        <table style="background-color: #CE9;width: 100%;">
+        <tr>
+        <td>
+        <?php 
         echo "<h4>Algorítimo 1</h4>";
         echo "Distancia: ".$_GET["distancia"]."<br />Rota: ".$_GET["rota"]."<br />Custo: ".$_GET["custo"];
+         ?>
+        </td>
+        <td>
+        <?php
         echo "<h4>Algorítimo 2</h4>";
-        echo "Distancia: ".$_GET["distancia2"]."<br />Rota: ".$_GET["rota2"]."<br />Custo: ".$_GET["custo2"];
-    }
+        echo "Distancia: ".$_GET["distancia2"]."<br />Rota: ".$_GET["rota2"]."<br />Custo: ".$_GET["custo2"]; ?>
+        </td>
+        </tr>
+        </table>
+    <?php }
 }
 ?>
-
+<table>
+<tr>
+<td>
 <form action="rota-3.php" method="POST" enctype="multipart/form-data">
     <p>
         <label for="autonomia">Autonomia (km/l):</label><br />
@@ -49,6 +62,8 @@ if(!empty($_GET)) {
     </p>
     <button type="submit">Enviar</button>
 </form>
+</td>
+<td style="background-color: #DDD;padding: 0 20px;">
 <h2>Exemplo de mapas</h2>
 <p>Os arquivos de mapa de malha abaixo são exemplos para testar o sistema, faça o download em seu computador [opção: salvar arquivo como] para enviar o arquivo no formulário acima. O sistema aceita comunicação direta entre máquinas, o formulário acima é feito para testes de cálculos dos algorítimos.</p>
 <ul>
@@ -58,5 +73,11 @@ if(!empty($_GET)) {
     <li><a href="mapas/mapa4.txt">mapa4.txt</a> - 8 nós</li>
     <li><a href="mapas/mapa5.txt">mapa5.txt</a> - 11 nós</li>
 </ul>
-
+</td>
+</tr>
+</table>
+<center>
+<h2>Francisco Matelli Matulovic</h2>
+<p>2016-2018</p>
+</center>
 <?php
